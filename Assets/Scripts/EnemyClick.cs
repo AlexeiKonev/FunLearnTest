@@ -6,7 +6,7 @@ public class EnemyClick : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        Main.Instance.shoot.ShootToEnemy();
+        Main.Instance.Shoot.ShootToEnemy();
         Debug.Log("clicked");
     }
 }

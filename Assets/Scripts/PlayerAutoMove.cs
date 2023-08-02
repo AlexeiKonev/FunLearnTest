@@ -9,7 +9,7 @@ public class PlayerAutoMove : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (!underAttack)
         {
@@ -21,7 +21,7 @@ public class PlayerAutoMove : MonoBehaviour
             skeletonAnimation.AnimationName = "idle";
         }
     }
-    void AutoMove()
+    private void AutoMove()
     {
         transform.Translate(Vector2.right * Time.deltaTime);
     }

@@ -4,15 +4,42 @@ using UnityEngine.SceneManagement;
 public class Main : MonoBehaviour
 {
     public static Main Instance;
-    public Shoot shoot;
+    public Shoot Shoot;
     [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private GameObject GameWinPanel;
+    [SerializeField] private GameObject GameMenuPanel;
+    [SerializeField] private bool GameMenuPanelIsActive;
     private void Start()
     {
-        shoot = GetComponent<Shoot>();
+        Shoot = GetComponent<Shoot>();
         Instance = this;
         GameOverPanel.SetActive(false);
         GameWinPanel.SetActive(false);
+        GameMenuPanel.SetActive(false);
+    }
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Escape))
+        {
+
+            GameMenu();
+        }
+    }
+    public void GameMenu()
+    {
+        if (!GameMenuPanelIsActive)
+        {
+            Time.timeScale = 0;
+            GameMenuPanel.SetActive(true);
+            GameMenuPanelIsActive = true;
+        }
+        else
+        {
+            GameMenuPanel.SetActive(false);
+            Time.timeScale = 1;
+            GameMenuPanelIsActive = false;
+        }
+
     }
     public void GameWin()
     {
