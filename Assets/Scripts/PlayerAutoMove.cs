@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerAutoMove : MonoBehaviour
 {
     private bool underAttack = false;
+    [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private SkeletonAnimation skeletonAnimation;
 
 
@@ -23,7 +24,7 @@ public class PlayerAutoMove : MonoBehaviour
     }
     private void AutoMove()
     {
-        transform.Translate(Vector2.right * Time.deltaTime);
+        transform.Translate(Vector2.right * Time.deltaTime * moveSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -35,5 +36,5 @@ public class PlayerAutoMove : MonoBehaviour
         }
     }
 
- 
+
 }
