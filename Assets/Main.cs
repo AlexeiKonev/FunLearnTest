@@ -4,10 +4,12 @@ using UnityEngine.SceneManagement;
 public class Main : MonoBehaviour
 {
     public static Main Instance;
+    public Shoot shoot;
     [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private GameObject GameWinPanel;
     private void Start()
     {
+        shoot = GetComponent<Shoot>();
         Instance = this;
         GameOverPanel.SetActive(false);
         GameWinPanel.SetActive(false);
