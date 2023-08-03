@@ -1,14 +1,11 @@
 using Spine.Unity;
 using UnityEngine;
-
+//это скрипт для ручного управления для тестов анимации
 public class Move : MonoBehaviour
 {
     private bool facingRight = true;
     public SkeletonAnimation skAnimation;
-    void Start()
-    {
-
-    }
+   
 
     // Update is called once per frame
     void Update()
